@@ -1,7 +1,7 @@
 package hexarch.tutorial.infrastructure.review;
 
-import hexarch.tutorial.domain.review.IReviewService;
 import hexarch.tutorial.domain.review.Review;
+import hexarch.tutorial.domain.review.ReviewService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("review")
 class ReviewHttpAPI {
 
-    private IReviewService reviewService;
+    private ReviewService reviewService;
     private ReviewHttpAPIConverter reviewHttpAPIConverter;
 
-    ReviewHttpAPI(IReviewService reviewService, ReviewHttpAPIConverter reviewHttpAPIConverter) {
+    ReviewHttpAPI(ReviewService reviewService, ReviewHttpAPIConverter reviewHttpAPIConverter) {
         this.reviewService = reviewService;
         this.reviewHttpAPIConverter = reviewHttpAPIConverter;
     }

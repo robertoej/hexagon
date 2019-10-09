@@ -2,7 +2,7 @@ package hexarch.tutorial.domain.review;
 
 import hexarch.tutorial.domain.summary.SummaryService;
 
-public class ReviewService implements IReviewService {
+public class ReviewService {
     private ReviewRepository reviewRepository;
     private SummaryService summaryService;
 
@@ -11,7 +11,6 @@ public class ReviewService implements IReviewService {
         this.summaryService = summaryService;
     }
 
-    @Override
     public void processReview(Review review) {
         switch (review.getReviewType()) {
             case DISH:
